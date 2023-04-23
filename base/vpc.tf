@@ -1,8 +1,8 @@
 resource "aws_vpc" "dry_vpc" {
-  cidr_block       = "10.0.0.0/16"
+  cidr_block       = var.cidr
   instance_tenancy = "default"
 
   tags = {
-    Name = "main"
+    Name = "${var.env_code}-main"
   }
 }
